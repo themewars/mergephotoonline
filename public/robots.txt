@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mergephotosonline.com/sitemap.xml
+
