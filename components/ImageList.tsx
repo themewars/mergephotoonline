@@ -3,7 +3,7 @@
 import { useMergeStore } from '@/lib/store'
 import { X, GripVertical } from 'lucide-react'
 import { useDrag, useDrop } from 'react-dnd'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 
 interface ImageItemProps {
   image: { id: string; url: string; file: File }
@@ -32,9 +32,16 @@ function ImageItem({ image, index }: ImageItemProps) {
     },
   })
 
+  const setRef = useCallback(
+    (node: HTMLDivElement | null): void => {
+      drag(drop(node))
+    },
+    [drag, drop]
+  )
+
   return (
     <div
-      ref={(node) => drag(drop(node))}
+      ref={setRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`
