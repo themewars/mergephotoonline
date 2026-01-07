@@ -1,3 +1,5 @@
+'use client'
+
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { MergeTool } from '@/components/MergeTool'
 import { ThemeToggle } from '@/components/ThemeToggle'
