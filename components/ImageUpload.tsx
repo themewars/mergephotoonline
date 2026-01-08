@@ -79,7 +79,8 @@ export function ImageUpload() {
                   className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
                   onClick={(e) => {
                     e.stopPropagation()
-                    document.querySelector('input[type="file"]')?.click()
+                    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
+                    fileInput?.click()
                   }}
                 >
                   Choose Files
