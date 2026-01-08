@@ -9,46 +9,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://mergephotosonline.com'),
   title: {
-    default: 'Merge Photos Online Free - Combine Multiple Images into One | AI Photo Merger',
+    // Google recommends 50-60 characters for title
+    default: 'Merge Photos Online Free | Combine Images into One',
     template: '%s | Merge Photos Online'
   },
-  description: 'Merge photos online free - Combine multiple photos into one frame online. Free AI photo merger tool to merge photos together, merge photos to PDF, merge photos in one frame. No registration required. 100% free and secure.',
-  keywords: [
-    'merge photos online',
-    'merge photos online free',
-    'merge photos online free ai',
-    'merge photos online ai',
-    'merge photos online to pdf',
-    'merge photos online jpg',
-    'merge photos online free with size',
-    'merge photos online into one',
-    'how to merge photos together online',
-    'how to merge multiple photos into one online',
-    'merge photos in one frame online',
-    'merge photos together online free',
-    'merge photos iphone online',
-    'merge photos to pdf online',
-    'merge photos into one online',
-    'merge photos and videos online',
-    'merge photos to panorama online',
-    'merge photos to make video online',
-    'merge photo online',
-    'merge photo online free',
-    'merge photo online ai',
-    'merge photo online jpg',
-    'merge photo online pdf',
-    'merge photo online in one frame',
-    'merge photo online editor',
-    'merge photo online converter',
-    'merge photo online ai free',
-    'merge photos online with effects',
-    'combine photos online',
-    'photo merger',
-    'image combiner',
-    'photo collage maker',
-    'merge images online',
-    'combine images online'
-  ].join(', '),
+  // Google recommends 150-160 characters for description
+  description: 'Merge photos online free. Combine multiple photos into one frame, merge photos to PDF, or create photo collages. AI-powered photo merger tool. No registration required.',
+  // Note: Google doesn't use meta keywords tag anymore, but keeping for other search engines
+  keywords: 'merge photos online, merge photos online free, combine photos, photo merger, merge photos to pdf, photo collage maker',
   authors: [{ name: 'Merge Photos Online' }],
   creator: 'Merge Photos Online',
   publisher: 'Merge Photos Online',
@@ -62,8 +30,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://mergephotosonline.com',
     siteName: 'Merge Photos Online',
-    title: 'Merge Photos Online Free - Combine Multiple Images into One',
-    description: 'Free online tool to merge photos together. Combine multiple photos into one frame, merge photos to PDF, merge photos with AI. No registration required.',
+    // Optimized for social sharing
+    title: 'Merge Photos Online Free | Combine Images into One',
+    description: 'Free online tool to merge photos together. Combine multiple photos into one frame, merge photos to PDF. No registration required.',
     images: [
       {
         url: '/og-image.jpg',
@@ -75,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Merge Photos Online Free - Combine Multiple Images',
+    title: 'Merge Photos Online Free | Combine Images',
     description: 'Free online tool to merge photos together. Combine multiple photos into one frame online.',
     images: ['/og-image.jpg'],
   },
@@ -173,6 +142,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google recommended meta tags */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0ea5e9" />
+        {/* Structured Data for Rich Snippets */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
