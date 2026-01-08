@@ -63,6 +63,14 @@ export const metadata: Metadata = {
     canonical: 'https://mergephotosonline.com',
   },
   category: 'Photo Editing Tools',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
