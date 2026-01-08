@@ -40,23 +40,26 @@ export default function Home() {
           <div className="bg-muted/30 py-16">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Create Stunning Image Composites</h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Effortlessly combine multiple images into eye-catching composites. Upload images in bulk and create perfect collages, comparisons, and visual stories. Ideal for portfolios, before-and-after presentations, and social media content.
+                <h1 className="text-4xl font-bold mb-4">Merge Photos Online Free - Combine Multiple Photos into One</h1>
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-4">
+                  <strong>Merge photos online free</strong> with our powerful photo merger tool. <strong>Combine multiple photos into one</strong> frame online, merge photos to PDF, or create stunning photo collages. Our <strong>free AI photo merger</strong> lets you merge photos together online without any registration. Whether you want to <strong>merge photos in one frame</strong>, merge photos to panorama, or merge photos with effects - we've got you covered.
+                </p>
+                <p className="text-muted-foreground text-base max-w-3xl mx-auto">
+                  Perfect for designers creating visual presentations, social media managers crafting engaging content, and anyone who wants to <strong>merge multiple photos into one online</strong>. Our tool works on iPhone, Android, and desktop browsers. <strong>Merge photos online free</strong> with size control, merge photos to JPG or PDF format, and download high-quality merged images instantly.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 {/* How It Works */}
                 <div>
-                  <h3 className="text-2xl font-semibold mb-6">How It Works</h3>
+                  <h2 className="text-2xl font-semibold mb-6">How to Merge Photos Online</h2>
                   <div className="space-y-4">
                     {[
-                      'Upload images via drag-and-drop',
-                      'Arrange images as desired',
-                      'Choose alignment (horizontal/vertical)',
-                      'Customize settings',
-                      'Preview and download'
+                      'Upload images via drag-and-drop or click to select',
+                      'Arrange images as desired - reorder by dragging',
+                      'Choose merge direction (horizontal/vertical/grid)',
+                      'Customize settings - padding, borders, background',
+                      'Preview merged image and download instantly'
                     ].map((step, index) => (
                       <div key={index} className="flex items-center gap-4">
                         <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold flex-shrink-0">
@@ -70,15 +73,17 @@ export default function Home() {
 
                 {/* Key Features */}
                 <div>
-                  <h3 className="text-2xl font-semibold mb-6">Key Features</h3>
+                  <h2 className="text-2xl font-semibold mb-6">Why Choose Our Photo Merger?</h2>
                   <div className="space-y-4">
                     {[
-                      'Intuitive drag-and-drop interface',
-                      'Flexible alignment options (horizontal/vertical)',
-                      'Customizable padding and borders',
-                      'Image resizing capability',
-                      'High-quality output for various uses',
-                      'Instant preview of merged image'
+                      '100% Free - Merge photos online free, no registration',
+                      'Merge photos in one frame - horizontal, vertical, or grid',
+                      'Merge photos to PDF, JPG, PNG, or WebP formats',
+                      'AI-powered photo merging with smart resizing',
+                      'Customizable padding, borders, and backgrounds',
+                      'Works on iPhone, Android, and all desktop browsers',
+                      'No upload to server - 100% client-side processing',
+                      'High-quality output for social media and printing'
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center gap-4">
                         <Check className="w-5 h-5 text-primary flex-shrink-0" />
@@ -109,15 +114,15 @@ export default function Home() {
 
               {/* CTA Section */}
               <div className="bg-primary text-primary-foreground rounded-lg p-8 text-center">
-                <h3 className="text-2xl font-bold mb-2">Ready to Create?</h3>
+                <h2 className="text-2xl font-bold mb-2">Ready to Merge Photos Online?</h2>
                 <p className="mb-6 opacity-90">
-                  Start combining your images into stunning composites - no design skills required!
+                  Start merging your photos online free - combine multiple photos into one, merge photos to PDF, or create stunning collages. No design skills required!
                 </p>
                 <a
                   href="#top"
                   className="inline-block px-6 py-3 bg-background text-foreground rounded-lg font-medium hover:bg-background/90 transition-colors"
                 >
-                  Get Started Now
+                  Merge Photos Now - 100% Free
                 </a>
               </div>
             </div>
