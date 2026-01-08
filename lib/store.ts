@@ -32,7 +32,7 @@ interface MergeStore {
 const defaultOptions: MergeOptions = {
   direction: 'horizontal',
   autoResize: true,
-  padding: 10,
+  padding: 0,
   border: {
     enabled: false,
     type: 'solid',
