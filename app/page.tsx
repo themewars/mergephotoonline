@@ -4,7 +4,7 @@ import { MergeTool } from '@/components/MergeTool'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Square, Check, Users, Zap, Sparkles } from 'lucide-react'
+import { Square, Check, Users, Zap, Sparkles, Maximize2, FileDown, RefreshCw, Crop, Scissors, Eraser, Type } from 'lucide-react'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
@@ -100,6 +100,47 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Related Tools Section */}
+              <div className="mb-16">
+                <h2 className="text-2xl font-semibold mb-8 text-center">More Free Image Tools</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { icon: Maximize2, title: 'Resize Image', href: '/tools/resize-image', color: 'bg-green-500' },
+                    { icon: FileDown, title: 'Compress Image', href: '/tools/compress-image', color: 'bg-purple-500' },
+                    { icon: RefreshCw, title: 'Convert Format', href: '/tools/convert-image', color: 'bg-orange-500' },
+                    { icon: Crop, title: 'Crop Image', href: '/tools/crop-image', color: 'bg-pink-500' },
+                    { icon: Scissors, title: 'Split Image', href: '/tools/split-image', color: 'bg-indigo-500' },
+                    { icon: Eraser, title: 'Remove Background', href: '/tools/remove-background', color: 'bg-red-500' },
+                    { icon: Type, title: 'Add Watermark', href: '/tools/add-watermark', color: 'bg-teal-500' },
+                    { icon: RefreshCw, title: 'Rotate Image', href: '/tools/rotate-image', color: 'bg-cyan-500' },
+                  ].map((tool, index) => {
+                    const Icon = tool.icon
+                    return (
+                      <Link
+                        key={index}
+                        href={tool.href}
+                        className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 hover:shadow-md transition-all group text-center"
+                      >
+                        <div className={`${tool.color} p-3 rounded-lg text-white w-fit mx-auto mb-3 group-hover:scale-110 transition-transform`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h4 className="text-sm font-semibold group-hover:text-primary transition-colors">
+                          {tool.title}
+                        </h4>
+                      </Link>
+                    )
+                  })}
+                </div>
+                <div className="text-center mt-6">
+                  <Link
+                    href="/tools"
+                    className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                  >
+                    View All Tools
+                  </Link>
+                </div>
+              </div>
+
               {/* Who Can Benefit */}
               <div className="mb-16">
                 <h3 className="text-2xl font-semibold mb-8 text-center">Who Can Benefit</h3>
@@ -144,6 +185,16 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">
                   Create stunning image composites with ease.
                 </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">Image Tools</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><Link href="/" className="hover:text-foreground transition-colors">Merge Photos</Link></li>
+                  <li><Link href="/tools/resize-image" className="hover:text-foreground transition-colors">Resize Image</Link></li>
+                  <li><Link href="/tools/compress-image" className="hover:text-foreground transition-colors">Compress Image</Link></li>
+                  <li><Link href="/tools/convert-image" className="hover:text-foreground transition-colors">Convert Format</Link></li>
+                  <li><Link href="/tools" className="hover:text-foreground transition-colors font-medium text-primary">View All Tools →</Link></li>
+                </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Quick Links</h4>
