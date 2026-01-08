@@ -42,7 +42,7 @@ export default function Home() {
               <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold mb-4">Merge Photos Online Free - Combine Multiple Photos into One</h1>
                 <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-4">
-                  <strong>Merge photos online free</strong> with our powerful photo merger tool. <strong>Combine multiple photos into one</strong> frame online, merge photos to PDF, or create stunning photo collages. Our <strong>free AI photo merger</strong> lets you merge photos together online without any registration. Whether you want to <strong>merge photos in one frame</strong>, merge photos to panorama, or merge photos with effects - we've got you covered.
+                  <strong>Merge photos online free</strong> with our powerful photo merger tool. <strong>Combine multiple photos into one</strong> frame online, merge photos to PDF, or create stunning photo collages. Our <strong>free AI photo merger</strong> lets you merge photos together online without any registration. Whether you want to <strong>merge photos in one frame</strong>, merge photos to panorama, or merge photos with effects - we&apos;ve got you covered.
                 </p>
                 <p className="text-muted-foreground text-base max-w-3xl mx-auto">
                   Perfect for designers creating visual presentations, social media managers crafting engaging content, and anyone who wants to <strong>merge multiple photos into one online</strong>. Our tool works on iPhone, Android, and desktop browsers. <strong>Merge photos online free</strong> with size control, merge photos to JPG or PDF format, and download high-quality merged images instantly.
