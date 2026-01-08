@@ -2,8 +2,10 @@
 
 import { useMergeStore } from '@/lib/store'
 import { useState, useRef, useEffect } from 'react'
-import { ZoomIn, ZoomOut, RotateCcw, Eye, EyeOff, Loader2 } from 'lucide-react'
+import { ZoomIn, ZoomOut, RotateCcw, Eye, EyeOff, Loader2, Download } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { canvasToBlob, downloadImage } from '@/lib/imageProcessor'
+import toast from 'react-hot-toast'
 
 export function PreviewPanel({ isGenerating }: { isGenerating: boolean }) {
   const { previewCanvas, images } = useMergeStore()
@@ -12,6 +14,7 @@ export function PreviewPanel({ isGenerating }: { isGenerating: boolean }) {
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
   const [comparisonMode, setComparisonMode] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const [imageUrl, setImageUrl] = useState<string | null>(null)
 
@@ -115,6 +118,26 @@ export function PreviewPanel({ isGenerating }: { isGenerating: boolean }) {
     setIsDragging(false)
   }
 
+  const handleDownload = async () => {
+    if (!previewCanvas) {
+      toast.error('No image to download')
+      return
+    }
+
+    setIsDownloading(true)
+    try {
+      const blob = await canvasToBlob(previewCanvas, 'png', 1.0)
+      const filename = `merged-image-${Date.now()}.png`
+      downloadImage(blob, filename)
+      toast.success('Image downloaded successfully!')
+    } catch (error) {
+      console.error('Error downloading image:', error)
+      toast.error('Failed to download image')
+    } finally {
+      setIsDownloading(false)
+    }
+  }
+
   if (images.length === 0) {
     return (
       <div className="bg-card border border-border rounded-lg p-12">
@@ -140,6 +163,26 @@ export function PreviewPanel({ isGenerating }: { isGenerating: boolean }) {
           )}
         </div>
         <div className="flex items-center gap-2">
+          {previewCanvas && (
+            <button
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium flex items-center gap-2"
+              title="Download Merged Image"
+            >
+              {isDownloading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Downloading...
+                </>
+              ) : (
+                <>
+                  <Download className="w-4 h-4" />
+                  Download
+                </>
+              )}
+            </button>
+          )}
           <button
             onClick={() => setComparisonMode(!comparisonMode)}
             className={`p-2 rounded-lg transition-colors ${
