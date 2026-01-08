@@ -30,7 +30,7 @@ export default function RemoveBackgroundPage() {
 
   const removeBackground = async (file: File) => {
     setIsProcessing(true)
-    toast.info('Background removal is processing...')
+    toast.loading('Background removal is processing...')
     
     try {
       const img = new Image()
