@@ -117,12 +117,14 @@ export function PreviewPanel({ isGenerating }: { isGenerating: boolean }) {
 
   if (images.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-lg p-12 flex flex-col items-center justify-center min-h-[400px] text-center">
-        <Eye className="w-16 h-16 text-muted-foreground mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Preview</h3>
-        <p className="text-muted-foreground">
-          Upload images to see the merged preview here
-        </p>
+      <div className="bg-card border border-border rounded-lg p-12">
+        <h3 className="text-lg font-semibold mb-4">Merged Image Preview</h3>
+        <div className="bg-muted/30 rounded-lg p-12 flex flex-col items-center justify-center min-h-[400px] text-center border-2 border-dashed border-border">
+          <Eye className="w-16 h-16 text-muted-foreground mb-4" />
+          <p className="text-muted-foreground">
+            Upload and arrange images to see the preview
+          </p>
+        </div>
       </div>
     )
   }

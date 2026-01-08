@@ -50,44 +50,48 @@ export function ImageUpload() {
 
   return (
     <div>
-      <label className="block text-sm font-medium mb-2">Upload Images</label>
       <div
         {...getRootProps()}
         className={`
-          border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors
+          border-2 border-dashed rounded-lg p-12 text-center cursor-pointer transition-colors
           ${isDragActive || isDragging
             ? 'border-primary bg-primary/5'
-            : 'border-border hover:border-primary/50 hover:bg-accent/50'
+            : 'border-primary/30 hover:border-primary/50 hover:bg-accent/50'
           }
         `}
       >
         <input {...getInputProps()} onChange={handleFileSelect} />
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-4">
           {isDragActive || isDragging ? (
             <>
-              <Upload className="w-12 h-12 text-primary animate-bounce" />
-              <p className="text-primary font-medium">Drop images here</p>
+              <Upload className="w-16 h-16 text-primary animate-bounce" />
+              <p className="text-primary font-medium text-lg">Drop images here</p>
             </>
           ) : (
             <>
-              <ImageIcon className="w-12 h-12 text-muted-foreground" />
+              <ImageIcon className="w-16 h-16 text-muted-foreground" />
               <div>
-                <p className="text-sm font-medium mb-1">
-                  Drag & drop images here, or click to select
+                <p className="text-base font-medium mb-2">
+                  Drag and drop images here, or click to select files
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  Supports PNG, JPG, GIF, WebP, BMP
-                </p>
+                <button
+                  type="button"
+                  className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    document.querySelector('input[type="file"]')?.click()
+                  }}
+                >
+                  Choose Files
+                </button>
               </div>
             </>
           )}
         </div>
       </div>
-      {images.length > 0 && (
-        <p className="text-xs text-muted-foreground mt-2">
-          {images.length} image(s) loaded
-        </p>
-      )}
+      <p className="text-sm text-muted-foreground mt-3 text-center">
+        {images.length} file(s) selected
+      </p>
     </div>
   )
 }

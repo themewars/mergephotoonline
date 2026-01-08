@@ -74,44 +74,54 @@ export function MergeTool() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
-      {/* Left Panel - Controls */}
-      <div className="lg:col-span-1 space-y-6">
-        <div className="bg-card border border-border rounded-lg p-6 space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold">Controls</h2>
-            <div className="flex gap-2">
-              <button
-                onClick={undo}
-                disabled={!canUndo()}
-                className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Undo"
-              >
-                <Undo2 className="w-4 h-4" />
-              </button>
-              <button
-                onClick={redo}
-                disabled={!canRedo()}
-                className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Redo"
-              >
-                <Redo2 className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+    <div className="space-y-6">
+      {/* Upload Section */}
+      <div className="bg-card border border-border rounded-lg p-6">
+        <ImageUpload />
+      </div>
 
-          <ImageUpload />
-
-          {images.length > 0 && (
-            <>
-              <ImageList />
-              <MergeControls />
-            </>
-          )}
+      {/* Preview and Controls Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Preview Section */}
+        <div className="lg:col-span-2">
+          <PreviewPanel isGenerating={isGenerating} />
         </div>
 
-        {/* Export Settings */}
-        {images.length > 0 && (
+        {/* Controls Section - Always Visible */}
+        <div className="lg:col-span-1 space-y-6">
+          {/* Undo/Redo */}
+          <div className="flex items-center justify-end gap-2">
+            <button
+              onClick={undo}
+              disabled={!canUndo()}
+              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Undo"
+            >
+              <Undo2 className="w-4 h-4" />
+            </button>
+            <button
+              onClick={redo}
+              disabled={!canRedo()}
+              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Redo"
+            >
+              <Redo2 className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Merge Options - Always Visible */}
+          <div className="bg-card border border-border rounded-lg p-6">
+            <MergeControls />
+          </div>
+
+          {/* Manage Images */}
+          {images.length > 0 && (
+            <div className="bg-card border border-border rounded-lg p-6">
+              <ImageList />
+            </div>
+          )}
+
+          {/* Export Settings */}
           <div className="bg-card border border-border rounded-lg p-6 space-y-4">
             <h3 className="text-lg font-semibold">Export Settings</h3>
             
@@ -163,12 +173,7 @@ export function MergeTool() {
               )}
             </button>
           </div>
-        )}
-      </div>
-
-      {/* Right Panel - Preview */}
-      <div className="lg:col-span-2">
-        <PreviewPanel isGenerating={isGenerating} />
+        </div>
       </div>
     </div>
   )
