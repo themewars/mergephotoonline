@@ -154,6 +154,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0ea5e9" />
+        <meta name="google-site-verification" content="f3TTs20ycUTUY44H1j8Ezyk-wy_MepIDqlU9H0_Tv3w" />
         {/* Structured Data for Rich Snippets */}
         <script
           type="application/ld+json"
